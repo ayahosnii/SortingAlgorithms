@@ -4,29 +4,24 @@ namespace MergeSorting;
 
 use MergeSorting\interfaces\Display;
 
-class Visualization implements Display
+class SelectionSortVisualization implements Display
 {
-    public function showStep($level, $left, $right)
+    public function showStep($level, $array)
     {
-        // Illustration Note: Array is divided at this step
-        echo '<ul>At this step, the array is divided into smaller subarrays.</ul>';
+        // Illustration Note: Array is selected and sorted at this step
+        echo '<ul>At this step, the minimum element is selected and swapped.</ul>';
 
         echo '<div class="step-container">';
         echo '<div class="step">';
-        echo '<h3>Step ' . $level . ': Left Array</h3>';
-        $this->displayData($left);
-        echo '</div>';
-
-        echo '<div class="step">';
-        echo '<h3>Step ' . $level . ': Right Array</h3>';
-        $this->displayData($right);
+        echo '<h3>Step ' . $level . ': Unsorted Array</h3>';
+        $this->displayData($array);
         echo '</div>';
         echo '</div>';
     }
 
     public function showSortedResult($level, $sorted)
     {
-        echo '<ul> At this step, the subarrays are merged and sorted.</ul>';
+        echo '<ul> At this step, the selected element is moved to its sorted position.</ul>';
 
         echo '<div class="step">';
         echo '<h3>Step ' . $level . ': Sorted Array</h3>';

@@ -2,7 +2,7 @@
 require_once __DIR__ . '../../vendor/autoload.php';
 
 use MergeSorting\MergeSorter;
-use MergeSorting\Visualization;
+use MergeSorting\MergeSortVisualization;
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -29,9 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 }
 
-$visualization = new Visualization();
-$mergeSorter = new MergeSorter($visualization);
+$visualization = new \MergeSorting\SelectionSortVisualization();
+$mergeSorter = new \MergeSorting\SelectionSorter($visualization);
 
 // Include the template file
-include 'template.php';
+include 'merge_template.php';
 ?>

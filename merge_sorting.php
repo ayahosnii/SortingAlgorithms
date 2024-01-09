@@ -185,7 +185,7 @@ echo '<pre>';
 print_r($unsortedProducts);
 echo "<hr>";
 
-echo "<h2>Merge Sort Visualization</h2>";
+echo "<h2>Merge Sort MergeSortVisualization</h2>";
 $sortedMerge = mergeSortProducts($unsortedProducts);
 
 ?>

@@ -31,9 +31,9 @@ class MergeSorter
         $right = array_slice($products, $mid);
 
         // Display the current step in the sorting process
-        $this->display->showStep($level, $left, $right);
+        $this->display->showStep($level, ['left' => $left, 'right' => $right]);
 
-        // Recursively بشكل متكرر apply sort to the left and right subarrays
+        // Recursively apply sort to the left and right subarrays
         $left = $this->sort($left, $level + 1);
         $right = $this->sort($right, $level + 1);
 
