@@ -97,6 +97,38 @@
             white-space: pre-wrap;
             word-wrap: break-word;
         }
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: rgba(253, 45, 125, 0.6);
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        input[type="radio"] {
+            background-color: rgba(253, 45, 125, 0.6);
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            padding: 8px;
+            margin-right: 5px; /* Add some margin for better spacing */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        input[type="radio"]:hover {
+            background-color: rgba(253, 45, 125, 1);
+        }
+
+
+        input[type="submit"]:hover {
+            background-color: rgba(244, 6, 133, 0.75);
+        }
     </style>
 </head>
 <body>
