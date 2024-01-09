@@ -8,6 +8,9 @@ class Visualization implements Display
 {
     public function showStep($level, $left, $right)
     {
+        // Illustration Note: Array is divided at this step
+        echo '<ul>At this step, the array is divided into smaller subarrays.</ul>';
+
         echo '<div class="step-container">';
         echo '<div class="step">';
         echo '<h3>Step ' . $level . ': Left Array</h3>';
@@ -23,6 +26,8 @@ class Visualization implements Display
 
     public function showSortedResult($level, $sorted)
     {
+        echo '<ul> At this step, the subarrays are merged and sorted.</ul>';
+
         echo '<div class="step">';
         echo '<h3>Step ' . $level . ': Sorted Array</h3>';
         $this->displayData($sorted);

@@ -44,6 +44,20 @@
 </head>
 <body>
 
+<h2>Merge Sorting</h2>
+<h2>Enter Unsorted  Array Values</h2>
+<form method="post" action="">
+    <?php foreach ($unsortedProducts as $product): ?>
+        <label for="product_name[]">Product Name</label>
+        <input name="product_name[]" value="<?= $product['name']; ?>">
+
+        <label for="product_price[]">Product Price</label>
+        <input name="product_price[]" value="<?= $product['price']; ?>">
+        <br>
+    <?php endforeach; ?>
+    <input type="submit" value="Sort">
+</form>
+
 <h2>Unsorted Products</h2>
 <pre>
     <?php print_r($unsortedProducts); ?>
@@ -51,8 +65,13 @@
 <hr>
 
 <h2>Merge Sort Visualization</h2>
+<h4>The original unsorted array is divided into smaller subarrays</h4>
 <?php
 $sortedMerge = $mergeSorter->sort($unsortedProducts);
+?>
+<h4>until each subarray contains 1 or 0 elements.
+    This is the base case, and no further division is possible.</h4>
+<?php
 $visualization->displayData($sortedMerge);
 ?>
 <body>
