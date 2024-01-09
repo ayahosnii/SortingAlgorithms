@@ -14,12 +14,12 @@ class MergeSortVisualization implements Display
         echo '<div class="step-container">';
         echo '<div class="step">';
         echo '<h3>Step ' . $level . ': Left Array</h3>';
-        $this->displayData($array['left']);
+        $this->displayVisualArray($array['left']);
         echo '</div>';
 
         echo '<div class="step">';
         echo '<h3>Step ' . $level . ': Right Array</h3>';
-        $this->displayData($array['right']);
+        $this->displayVisualArray($array['right']);
         echo '</div>';
         echo '</div>';
     }
@@ -30,17 +30,31 @@ class MergeSortVisualization implements Display
 
         echo '<div class="step">';
         echo '<h3>Step ' . $level . ': Sorted Array</h3>';
-        $this->displayData($sorted);
+        $this->displayVisualArray($sorted);
         echo '</div>';
     }
 
     public function displayData($products)
     {
+        // Default implementation using print_r
         echo "<pre>";
         print_r($products);
         echo "</pre>";
         echo PHP_EOL;
     }
-}
 
-?>
+    private function displayVisualArray($products)
+    {
+        echo '<div class="visual-array">';
+        foreach ($products as $product) {
+            echo '<div class="array-item">';
+            echo '<div class="product-box">';
+            echo '<div class="product-price">' . $product['price']  . '</div>';
+            echo '<div class="product-name" style="font-size: 5px">' . $product['name'] . '</div>';
+
+            echo '</div>';
+            echo '</div>';
+        }
+        echo '</div>';
+    }
+}

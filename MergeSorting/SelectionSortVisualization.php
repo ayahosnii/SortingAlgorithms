@@ -14,7 +14,7 @@ class SelectionSortVisualization implements Display
         echo '<div class="step-container">';
         echo '<div class="step">';
         echo '<h3>Step ' . $level . ': Unsorted Array</h3>';
-        $this->displayData($array);
+        $this->displayVisualArray($array);
         echo '</div>';
         echo '</div>';
     }
@@ -25,7 +25,7 @@ class SelectionSortVisualization implements Display
 
         echo '<div class="step">';
         echo '<h3>Step ' . $level . ': Sorted Array</h3>';
-        $this->displayData($sorted);
+        $this->displayVisualArray($sorted);
         echo '</div>';
     }
 
@@ -36,6 +36,22 @@ class SelectionSortVisualization implements Display
         echo "</pre>";
         echo PHP_EOL;
     }
+
+    private function displayVisualArray($products)
+    {
+        echo '<div class="visual-array">';
+        foreach ($products as $product) {
+            echo '<div class="array-item">';
+            echo '<div class="product-box">';
+            echo '<div class="product-price">' . $product['price']  . '</div>';
+            echo '<div class="product-name" style="font-size: 5px">' . $product['name'] . '</div>';
+
+            echo '</div>';
+            echo '</div>';
+        }
+        echo '</div>';
+    }
+
 }
 
 ?>
